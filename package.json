@@ -1,0 +1,19 @@
+{
+    "name": "pt.omegaleo.toolbox",
+    "version": "1.0.0",
+    "displayName": "Omega Leo's Toolbox",
+    "description": "This package contains some essential scripts and assets to help optimize the game creation workflow",
+    "unity": "2021.3",
+    "unityRelease": "8f1",
+    "documentationUrl": "https://github.com/omegaleo/unity-toolbox",
+    "changelogUrl": "https://github.com/omegaleo/unity-toolbox/blob/main/changelog.md",
+    "licensesUrl": "https://github.com/omegaleo/unity-toolbox/blob/main/LICENSE.md",
+    "dependencies": {},
+   "keywords": [],
+    "author": {
+      "name": "Nuno 'Omega Leo' Diogo",
+      "email": "nunodiogo@omegaleo.pt",
+      "url": "https://omegaleo.pt"
+    }
+  }
+  
