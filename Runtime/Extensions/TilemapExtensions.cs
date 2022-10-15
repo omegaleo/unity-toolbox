@@ -21,15 +21,5 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
                 }
             }
         }
-        
-        /// <summary>
-        /// Get tilemap related position of an object
-        /// </summary>
-        /// <param name="tilemap"></param>
-        /// <returns></returns>
-        public static Vector3Int GetTilePosition(this Tilemap tilemap, Vector3 position)
-        {
-            return tilemap.WorldToCell(position);
-        }
     }
 }
