@@ -1,7 +1,9 @@
 {
     "name": "OmegaLeo.Toolbox.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:3f7ded1bb9876cc4e837d300a419e473"
+    ],
     "includePlatforms": [
         "Editor"
     ],
