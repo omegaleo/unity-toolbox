@@ -1,4 +1,4 @@
-<p align="center"><h1>Omega Leo's Unity Toolbox</h1></p>
+<h1 align="center">Omega Leo's Unity Toolbox</h1>
 <h1 align="center">
 <a href="https://discord.omegaleo.pt/" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/966706512108064798?color=blue&label=Discord&logo=discord&style=for-the-badge"></a>
 <a href="https://github.com/omegaleo/unity-toolbox/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/omegaleo/unity-toolbox?color=red&label=Report%20an%20Issue&logo=github&style=for-the-badge"></a>
