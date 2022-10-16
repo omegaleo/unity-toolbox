@@ -16,9 +16,9 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
         /// <returns></returns>
         public static Vector3 With(this Vector3 original, float? x = null, float? y = null, float? z = null)
         {
-            float newX = x ?? original.x;
-            float newY = y ?? original.y;
-            float newZ = z ?? original.z;
+            var newX = x ?? original.x;
+            var newY = y ?? original.y;
+            var newZ = z ?? original.z;
 
             return new Vector3(newX, newY, newZ);
         }
@@ -38,11 +38,10 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
             {
                 var distance = (position - otherPosition).sqrMagnitude;
 
-                if (distance < shortestDistance)
-                {
-                    closest = otherPosition;
-                    shortestDistance = distance;
-                }
+                if (!(distance < shortestDistance)) continue;
+                
+                closest = otherPosition;
+                shortestDistance = distance;
             }
 
             return closest;

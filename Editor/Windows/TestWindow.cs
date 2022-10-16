@@ -19,9 +19,7 @@ namespace OmegaLeo.Toolbox.Editor.Windows
 
         private void OnGUI()
         {
-            EditorGuiHelper.HorizontalLine(Color.gray);
-            EditorGUILayout.LabelField("Test");
-            EditorGuiHelper.HorizontalLine(Color.gray);
+            EditorGuiLayoutHelper.ColoredHeader("Test", Color.yellow, Color.black);
         }
     }
 }
