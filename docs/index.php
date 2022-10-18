@@ -8,5 +8,7 @@
 </head>
 <body>
     <h1>Welcome to the Omega Leo Unity Toolbox Documentation!</h1>
+
+    <?php echo 'test'; ?>
 </body>
 </html>
