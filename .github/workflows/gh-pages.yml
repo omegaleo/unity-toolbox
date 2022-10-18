@@ -18,9 +18,11 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
+      working-directory: ./Documentation
       run: npm install
 
     - name: Build
+      working-directory: ./Documentation
       run: npm run build
 
     - name: Deploy
@@ -28,5 +30,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.TOKEN }}
-        publish_dir: dist/angular-github-actions
+        publish_dir: Documentation/dist/docs
         enable_jekyll: true
