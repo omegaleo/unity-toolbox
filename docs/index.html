@@ -8,6 +8,7 @@
     <title>Omega Leo Unity Toolbox Documentation</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/23409b0204.js" crossorigin="anonymous" integrity="sha384-7cupKsyf1krt0hPaFhz7o347RIzmECgbuiiOTe+NbIi9eA5z8RSNuYFdTDgRTZHH"></script>
 </head>
 
 <body>
@@ -33,9 +34,12 @@
                                     instructions</span></a>
                         </li>
                         <li>
-                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Package
-                                    contents</span> </a>
+                            <span class="toggleNavLink">
+                                <a class="toggle" href="#submenu1" data-bs-toggle="collapse" class="nav-link"><i class="fa fa-angle-up icon"> </i></a>
+                                <a class="link" href="#content" class="nav-link">Package contents</a>
+                            </span>
+                        </li>
+                        <li>
                             <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                 <li class="w-100">
                                     <a href="#editor" class="subLink nav-link px-0"> <span
@@ -142,7 +146,7 @@
                         dui, id imperdiet ante. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in
                         faucibus. In eget finibus lorem, vitae aliquet sem.
                     </p>
-                    <h1>Package Contents</h1>
+                    <h1 id="content">Package Contents</h1>
                     <h3 id="editor">Editor</h3>
                     <p>
                         Fusce tincidunt viverra nunc quis auctor. Proin luctus volutpat orci, sollicitudin malesuada
