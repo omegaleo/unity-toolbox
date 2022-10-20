@@ -1,6 +1,6 @@
 ﻿using OmegaLeo.Toolbox.Runtime.Extensions;
 using UnityEngine;
-namespace OmegaLeo.Toolbox.Editor.Attributes
+namespace OmegaLeo.Toolbox.Attributes
 {
     public class ColoredHeaderAttribute : PropertyAttribute
     {

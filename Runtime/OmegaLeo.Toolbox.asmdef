@@ -1,9 +1,7 @@
 {
     "name": "OmegaLeo.Toolbox",
-    "rootNamespace": "",
-    "references": [
-        ""
-    ],
+    "rootNamespace": "OmegaLeo.Toolbox",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

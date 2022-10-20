@@ -1,4 +1,4 @@
-﻿using OmegaLeo.Toolbox.Editor.Attributes;
+﻿using OmegaLeo.Toolbox.Attributes;
 using OmegaLeo.Toolbox.Editor.Helpers;
 using UnityEditor;
 using UnityEngine;
