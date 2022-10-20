@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Omega_Leo_Toolbox.Editor.Attributes;
+using OmegaLeo.Toolbox.Editor.Attributes;
 using UnityEditor;
 using UnityEngine;
 
