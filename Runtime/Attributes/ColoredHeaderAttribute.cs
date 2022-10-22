@@ -7,16 +7,19 @@ namespace OmegaLeo.Toolbox.Attributes
         public int Thickness;
         public float Padding;
         public string Title;
-        public UnityEngine.Color TextColor;
-        public UnityEngine.Color BackgroundColor;
-    
+        private readonly string _textColor;
+        public UnityEngine.Color TextColor => _textColor.ColorFromHex();
+        private readonly string _backgroundColor;
+        public UnityEngine.Color BackgroundColor => _backgroundColor.ColorFromHex();
+        
+        //TODO: Add attribute for icon to be shown in the header as well
         public ColoredHeaderAttribute(string title, int thickness = 1, float padding = 10f, string textColor = "#fcba03", string backgroundColor = "#000")
         {
             Title = title;
             Thickness = thickness;
             Padding = padding;
-            TextColor = textColor.ColorFromHex();
-            BackgroundColor = backgroundColor.ColorFromHex();
+            _textColor = textColor;
+            _backgroundColor = backgroundColor;
         }
     
     }

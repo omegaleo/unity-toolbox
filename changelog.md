@@ -7,3 +7,4 @@
 - Added a UWP Build helper
 - Added Vector3 Extensions
 - Added a helper for EditorGUILayouts
+- Fixed Colored Header initialization exception
