@@ -8,7 +8,8 @@
     <title>Omega Leo Unity Toolbox Documentation</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://kit.fontawesome.com/23409b0204.js" crossorigin="anonymous" integrity="sha384-7cupKsyf1krt0hPaFhz7o347RIzmECgbuiiOTe+NbIi9eA5z8RSNuYFdTDgRTZHH"></script>
+    <script src="https://kit.fontawesome.com/23409b0204.js" crossorigin="anonymous"
+        integrity="sha384-7cupKsyf1krt0hPaFhz7o347RIzmECgbuiiOTe+NbIi9eA5z8RSNuYFdTDgRTZHH"></script>
 </head>
 
 <body>
@@ -24,6 +25,11 @@
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
                         <li>
+                            <div class="input-group rounded">
+                                <input id="searcher" type="search" class="form-control rounded" placeholder="Search..." aria-label="Search" aria-describedby="search-addon" />
+                              </div>
+                        </li>
+                        <li>
                             <a href="#overview" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Overview</span>
                             </a>
@@ -35,7 +41,8 @@
                         </li>
                         <li>
                             <span class="toggleNavLink">
-                                <a class="toggle" href="#submenu1" data-bs-toggle="collapse" class="nav-link"><i class="fa fa-angle-up icon"> </i></a>
+                                <a class="toggle" href="#submenu1" data-bs-toggle="collapse" class="nav-link"><i
+                                        class="fa fa-angle-up icon"> </i></a>
                                 <a class="link" href="#content" class="nav-link">Package contents</a>
                             </span>
                         </li>
@@ -68,7 +75,7 @@
                         <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                     </ul>
                 </header>
-                <div data-bs-spy="scroll" data-bs-target="#menu" data-bs-offset="0" tabindex="0">
+                <div id="content" data-bs-spy="scroll" data-bs-target="#menu" data-bs-offset="0" tabindex="0">
                     <h1 id="overview">Overview</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget nisl eu nibh
                         semper maximus. Nullam nec augue et ipsum blandit rutrum. Phasellus egestas tortor vel velit
@@ -282,6 +289,53 @@
             });
 
         });
+
+        jQuery("#searcher").keypress(function (e) {
+            var key = e.which;
+            if(key == 13)  // the enter key code
+            {
+                var search_str = jQuery("#searcher").val();
+                //console.log(search_str);
+                findString(search_str);
+                return false;
+            }
+        });
+
+        var TRange = null;
+
+        function findString(str) {
+            //str = "stuff";
+            if (parseInt(navigator.appVersion) < 4) return;
+            var strFound;
+
+            if (window.find) {
+
+                // CODE FOR BROWSERS THAT SUPPORT window.find
+
+                var original_content = window;
+                strFound = original_content.find(str);
+                if (!strFound) {
+                    strFound = original_content.find(str, 0, 1);
+                    while (original_content.find(str, 0, 1)) continue;
+                }
+            } else if (navigator.appName.indexOf("Microsoft") != -1) {
+
+                // EXPLORER-SPECIFIC CODE
+
+                if (TRange != null) {
+                    TRange.collapse(false);
+                    strFound = TRange.findText(str);
+                    if (strFound) TRange.select();
+                }
+                if (TRange == null || strFound == 0) {
+                    TRange = self.document.body.createTextRange();
+                    strFound = TRange.findText(str);
+                    if (strFound) TRange.select();
+                }
+            }
+            return;
+        }
+
     </script>
 </body>
 
