@@ -304,6 +304,7 @@ namespace OmegaLeo.Toolbox.Editor.Windows
 
                     if (GUILayout.Button("Build"))
                     {
+                        BuildSettingsHelper.SaveBuildSettings(_settings);
                         _settings.buildTargets.Where(x => x.enabled).ToList().ForEach((x) =>
                         {
                             BuildGame(x.target, x.folder, x.extension);
