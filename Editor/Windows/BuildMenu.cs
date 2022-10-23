@@ -30,7 +30,7 @@ namespace OmegaLeo.Toolbox.Editor.Windows
 
         private static void LoadSettings()
         {
-            _settings = BuildSettingsHelper.GetBuildSettings();
+            _settings = BuildSettingsHelper.GetOrCreateBuildSettings();
         }
 
         private void Awake()
