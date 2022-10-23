@@ -12,15 +12,18 @@ namespace OmegaLeo.Toolbox.Editor.Helpers
         {
             string settingsPath = $"Assets/Build/BuildSettings.asset";
 
-            var settings = ScriptableObject.CreateInstance<BuildSettings>();
-            
+
             if (!Directory.Exists(Path.Join(Application.dataPath, "Build")))
             {
                 Directory.CreateDirectory(Path.Join(Application.dataPath, "Build"));
             }
 
-            if (!AssetDatabase.FindAssets(settingsPath).Any())
+            var settings = AssetDatabase.LoadAssetAtPath<BuildSettings>(settingsPath);
+            
+            if (settings == null)
             {
+                Debug.Log("Didn't find a BuildSettings file, creating one...");
+                settings = ScriptableObject.CreateInstance<BuildSettings>();
                 settings.ProjectName = PlayerSettings.productName;
                 settings.CompanyName = PlayerSettings.companyName;
                 settings.BundleIdentifier = PlayerSettings.GetApplicationIdentifier(BuildTargetGroup.Standalone);
@@ -30,13 +33,12 @@ namespace OmegaLeo.Toolbox.Editor.Helpers
                 AssetDatabase.CreateAsset(settings, settingsPath);
             }
 
-            settings = AssetDatabase.LoadAssetAtPath<BuildSettings>(settingsPath);
-            EditorUtility.SetDirty(settings);
             return settings;
         }
         
         public static void SaveBuildSettings(BuildSettings settings)
         {
+            EditorUtility.SetDirty(settings);
             AssetDatabase.SaveAssets();
         }
     }

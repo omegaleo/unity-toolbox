@@ -25,6 +25,7 @@ namespace Omega_Leo_Toolbox.Editor.Drawers
 
             EditorGUI.DrawRect(position, attr.BackgroundColor);
             EditorGUI.LabelField(position, attr.Title, EditorStylesHelper.HeaderStyle(attr.TextColor));
+            
         }
     }
 }
