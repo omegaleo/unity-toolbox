@@ -30,7 +30,7 @@ namespace OmegaLeo.Toolbox.Editor.Windows
 
         private static void LoadSettings()
         {
-            _settings = BuildSettingsHelper.GetBuildSettings();
+            _settings = BuildSettingsHelper.GetOrCreateBuildSettings();
         }
 
         private void Awake()
@@ -304,6 +304,7 @@ namespace OmegaLeo.Toolbox.Editor.Windows
 
                     if (GUILayout.Button("Build"))
                     {
+                        BuildSettingsHelper.SaveBuildSettings(_settings);
                         _settings.buildTargets.Where(x => x.enabled).ToList().ForEach((x) =>
                         {
                             BuildGame(x.target, x.folder, x.extension);
