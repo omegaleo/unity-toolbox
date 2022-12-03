@@ -28,5 +28,26 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
 
             return Color.black;
         }
+        
+        /// <summary>
+        /// Creates a texture of width x height of a color
+        /// </summary>
+        /// <param name="color"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        private static Texture2D MakeTex(this Color color, int width, int height)
+        {
+            Color[] pix = new Color[width*height];
+ 
+            for(int i = 0; i < pix.Length; i++)
+                pix[i] = color;
+ 
+            Texture2D result = new Texture2D(width, height);
+            result.SetPixels(pix);
+            result.Apply();
+ 
+            return result;
+        }
     }
 }
