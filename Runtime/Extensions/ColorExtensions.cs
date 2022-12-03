@@ -36,7 +36,7 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        private static Texture2D MakeTex(this Color color, int width, int height)
+        public static Texture2D MakeTex(this Color color, int width, int height)
         {
             Color[] pix = new Color[width*height];
  
