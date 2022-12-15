@@ -43,6 +43,9 @@ namespace OmegaLeo.Toolbox.Editor.Helpers
             (Texture2D) AssetDatabase.LoadAssetAtPath($"Packages/pt.omegaleo.toolbox/Editor/Resources/Icons/{textureName}.png",
                 typeof(Texture2D));
 
+        public static string GetIconPath(string name) =>
+            $"Packages/pt.omegaleo.toolbox/Editor/Resources/Icons/{name}.png";
+
         public static int TabbedGroup(int currentTab, IEnumerable<Tab> tabs)
         {
             var enumerable = tabs.ToList();
