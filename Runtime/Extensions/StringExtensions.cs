@@ -32,7 +32,26 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
         /// <returns></returns>
         public static bool IsNotNullOrEmpty(this string str)
         {
-            return !String.IsNullOrEmpty(str);
+            return !str.IsNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Check if the string matches any of the search parameters
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public static bool AnyMatch(this string str, params string[] search)
+        {
+            foreach (string s in search)
+            {
+                if (s.Equals(str, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+            
+            return false;
         }
     }
 }
