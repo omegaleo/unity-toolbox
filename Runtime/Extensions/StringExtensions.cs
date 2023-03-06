@@ -53,5 +53,17 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
             
             return false;
         }
+
+        /// <summary>
+        /// Reverses a given string
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string Reverse(this string str)
+        {
+            char[] charArray = str.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
     }
 }
