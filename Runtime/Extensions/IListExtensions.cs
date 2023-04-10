@@ -61,7 +61,7 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
         /// <returns></returns>
         public static T Random<T>(this IList<T> list)
         {
-            if (list.Count == 0) return list[0];
+            if (list.Count == 0) return default;
             
             var r = new System.Random();
 
