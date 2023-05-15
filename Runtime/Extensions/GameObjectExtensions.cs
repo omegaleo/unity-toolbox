@@ -20,16 +20,17 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
         /// <param name="parent"></param>
         public static void DestroyChildren(this GameObject parent)
         {
-            Transform[] children = new Transform[parent.transform.childCount];
-            
             for (int i = 0; i < parent.transform.childCount; i++)
             {
-                children[i] = parent.transform.GetChild(i); 
-            }
-
-            for (int i = 0; i < children.Length; i++)
-            {
-                Object.Destroy(children[i].gameObject);
+                var obj = parent.transform.GetChild(i);
+                if (Application.isPlaying)
+                {
+                    Object.Destroy(obj.gameObject);
+                }
+                else
+                {
+                    Object.DestroyImmediate(obj.gameObject);
+                }
             }
         }
         
