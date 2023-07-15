@@ -1,11 +1,13 @@
 using System.IO;
 using UnityEngine;
+using UnityFlow.DocumentationHelper.Library.Documentation;
 
 namespace OmegaLeo.Toolbox.Runtime.Helpers
 {
     /// <summary>
     /// Helper class for any directory related methods.
     /// </summary>
+    [Documentation("", "Helper class for any directory related methods.", new []{nameof(DirectoryHelper)})]
     public static class DirectoryHelper
     {
         /// <summary>
@@ -13,6 +15,7 @@ namespace OmegaLeo.Toolbox.Runtime.Helpers
         /// </summary>
         /// <param name="path">Origin path</param>
         /// <param name="copyToRoot">Target path</param>
+        [Documentation(nameof(RecursiveCopy)+"(string path, bool copyToRoot)", "Method to copy recursively all files and folders from one path to another.", new []{nameof(RecursiveCopy)})]
         public static void RecursiveCopy(string path, string copyToRoot)
         {
             // Get all directories inside our origin
