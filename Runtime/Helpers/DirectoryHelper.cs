@@ -15,7 +15,13 @@ namespace OmegaLeo.Toolbox.Runtime.Helpers
         /// </summary>
         /// <param name="path">Origin path</param>
         /// <param name="copyToRoot">Target path</param>
-        [Documentation(nameof(RecursiveCopy)+"(string path, bool copyToRoot)", "Method to copy recursively all files and folders from one path to another.", new []{nameof(RecursiveCopy)})]
+        [Documentation(nameof(RecursiveCopy), 
+            "Method to copy recursively all files and folders from one path to another.", 
+            new []
+            {
+                "Path - The target path we want to recursively copy",
+                "CopyToRoot - The root path we want to copy into"
+            })]
         public static void RecursiveCopy(string path, string copyToRoot)
         {
             // Get all directories inside our origin
