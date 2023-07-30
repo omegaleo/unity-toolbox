@@ -92,7 +92,7 @@ namespace Omega_Leo_Toolbox.Editor.Models
         
         public string GenerateSidebarHtml()
         {
-            string html = $"<a href='#{Name}' class='subLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a><br>";
+            string html = $"<li class='w-100'><a href='#{Name}' class='subLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a></li>";
 
             foreach (var content in Classes)
             {
@@ -143,7 +143,7 @@ namespace Omega_Leo_Toolbox.Editor.Models
         
         public string GenerateSidebarHTML()
         {
-            string html = $"<a href='#{Name}' class='subSubLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a><br>";
+            string html = $"<li class='w-100'><a href='#{Name}' class='subSubLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a></li>";
 
             foreach (var content in Contents)
             {
@@ -211,7 +211,7 @@ namespace Omega_Leo_Toolbox.Editor.Models
         
         public string GenerateSidebarHTML()
         {
-            string html = $"<a href='#{Name}' class='subSubSubLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a><br>";
+            string html = $"<li class='w-100'><a href='#{Name}' class='subSubSubLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a></li>";
 
             return html;
         }

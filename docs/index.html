@@ -49,9 +49,6 @@
                         </li>
                         <li>
                             <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                <li class="w-100" id="sidebarDocContent">
-
-                                </li>
                             </ul>
                         </li>
                         <li>
@@ -164,11 +161,11 @@
                 var docDiv = document.getElementById("packageDocs");
                 docDiv.innerHTML = text;
             });
-        
+
         fetch('sidebar.txt')
             .then(response => response.text())
             .then(text => {
-                var docDiv = document.getElementById("sidebarDocContent");
+                var docDiv = document.getElementById("submenu1");
                 docDiv.innerHTML = text;
             });
     </script>
