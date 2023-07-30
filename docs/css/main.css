@@ -36,6 +36,12 @@ ul ul a {
     background: #6d7fcc;
 }
 
+.sidebar {
+    max-height: 100vh;
+    overflow-y: scroll;
+    position: fixed;
+}
+
 .sidebar .nav-link {
     color: #fff !important;
     padding: 10px 10px 10px 10px !important;
@@ -83,4 +89,8 @@ ul ul a {
     padding-right: 10px !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
+}
+
+.pageContent {
+    margin-left: 20vw;
 }
