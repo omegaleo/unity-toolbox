@@ -28,6 +28,18 @@ namespace Omega_Leo_Toolbox.Editor.Models
             
             return markDown;
         }
+        
+        public string GenerateHTML()
+        {
+            string html = $"<h1>{AssemblyName}</h1>";
+
+            foreach (var c in Classes)
+            {
+                html += c.GenerateHTML();
+            }
+            
+            return html;
+        }
     }
 
     public class DocClass
@@ -53,6 +65,19 @@ namespace Omega_Leo_Toolbox.Editor.Models
             }
             
             return markDown;
+        }
+        
+        public string GenerateHTML()
+        {
+            string html = $"<h2>{Name}</h2>";
+            html += $"<p>{Description}</p>";
+
+            foreach (var content in Contents)
+            {
+                html += content.GenerateHtml();
+            }
+            
+            return html;
         }
     }
     
@@ -89,6 +114,27 @@ namespace Omega_Leo_Toolbox.Editor.Models
             
             return markDown;
         }
+        
+        public string GenerateHtml()
+        {
+            string html = "";
+
+            if (Name.IsNotNullOrEmpty())
+            {
+                html += $"<h3>{Name}</h3>";
+            }
+            
+            html += $"<p>{Description}</p>";
+
+            foreach (var arg in Args)
+            {
+                html += arg.GenerateHtml();
+            }
+
+            html += "<br>";
+            
+            return html;
+        }
     }
 
     public class DocArgs
@@ -112,6 +158,20 @@ namespace Omega_Leo_Toolbox.Editor.Models
             }
             
             markdown += $"{Description}{Environment.NewLine}";
+
+            return markdown;
+        }
+        
+        public string GenerateHtml()
+        {
+            string markdown = "<p>";
+
+            if (Name.IsNotNullOrEmpty())
+            {
+                markdown += $"<b>{Name}</b> - ";
+            }
+            
+            markdown += $"{Description}</p>";
 
             return markdown;
         }
