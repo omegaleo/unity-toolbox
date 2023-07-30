@@ -211,9 +211,14 @@ namespace Omega_Leo_Toolbox.Editor.Models
         
         public string GenerateSidebarHTML()
         {
-            string html = $"<li class='w-100'><a href='#{Name}' class='subSubSubLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a></li>";
+            if (Name.IsNotNullOrEmpty())
+            {
+                string html = $"<li class='w-100'><a href='#{Name}' class='subSubSubLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a></li>";
 
-            return html;
+                return html;
+            }
+
+            return "";
         }
     }
 
