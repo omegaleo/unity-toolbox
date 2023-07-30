@@ -7,7 +7,7 @@ namespace OmegaLeo.Toolbox.Runtime.Helpers
     /// <summary>
     /// Helper class for any directory related methods.
     /// </summary>
-    [Documentation("", "Helper class for any directory related methods.", new []{nameof(DirectoryHelper)})]
+    [Documentation("", "Helper class for any directory related methods.")]
     public static class DirectoryHelper
     {
         /// <summary>
