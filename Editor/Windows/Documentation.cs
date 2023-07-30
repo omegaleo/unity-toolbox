@@ -47,10 +47,20 @@ namespace OmegaLeo.Toolbox.Editor.Windows
                     assemblyDoc = new Docs(doc.AssemblyName);
                     addAssemblyDoc = true;
                 }
+
+                var addNamespaceDoc = false;
+                
+                var namespaceDoc = assemblyDoc.Namespaces.FirstOrDefault(x => x.Name == doc.Namespace);
+
+                if (namespaceDoc == null)
+                {
+                    namespaceDoc = new DocNamespace(doc.Namespace);
+                    addNamespaceDoc = true;
+                }
                 
                 var addClassDoc = false;
                 
-                var classDoc = assemblyDoc.Classes.FirstOrDefault(x => x.Name == doc.ClassName);
+                var classDoc = namespaceDoc.Classes.FirstOrDefault(x => x.Name == doc.ClassName);
 
                 if (classDoc == null)
                 {
@@ -102,7 +112,12 @@ namespace OmegaLeo.Toolbox.Editor.Windows
 
                 if (addClassDoc)
                 {
-                    assemblyDoc.Classes.Add(classDoc);
+                    namespaceDoc.Classes.Add(classDoc);
+                }
+
+                if (addNamespaceDoc)
+                {
+                    assemblyDoc.Namespaces.Add(namespaceDoc);
                 }
 
                 if (addAssemblyDoc)

@@ -156,7 +156,6 @@
                     </p>
                     <h1 id="packageContent">Package Contents</h1>
                     <div id="packageDocs">
-
                     </div>
                 </div>
             </div>
@@ -167,10 +166,8 @@
         fetch('docs.txt')
             .then(response => response.text())
             .then(text => {
-                var converter = new showdown.Converter();
-
                 var docDiv = document.getElementById("packageDocs");
-                docDiv.innerHTML = converter.makeHtml(text);
+                docDiv.innerHTML = text;
             });
     </script>
 
