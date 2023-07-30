@@ -29,6 +29,7 @@ namespace OmegaLeo.Toolbox.Editor.Windows
         private static List<Docs> _documentation = new List<Docs>();
         private static string _docsFilePath = "Assets/Omega Leo Toolbox/docs/docs.md";
         private static string _docsTxtFilePath = "Assets/Omega Leo Toolbox/docs/docs.txt";
+        private static string _docsSidebarTxtFilePath = "Assets/Omega Leo Toolbox/docs/sidebar.txt";
 
         private static void LoadDocumentation()
         {
@@ -147,7 +148,8 @@ namespace OmegaLeo.Toolbox.Editor.Windows
             }
             if (GUILayout.Button("Save to docs.txt"))
             {
-                File.WriteAllText(_docsTxtFilePath, string.Join(Environment.NewLine, _documentation.Select(x => x.GenerateHTML())));
+                File.WriteAllText(_docsTxtFilePath, string.Join(Environment.NewLine, _documentation.Select(x => x.GenerateHtml())));
+                File.WriteAllText(_docsSidebarTxtFilePath, string.Join(Environment.NewLine, _documentation.Select(x => x.GenerateSidebarHtml())));
             }
             EditorGUILayout.EndHorizontal();
             

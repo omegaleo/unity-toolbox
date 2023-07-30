@@ -29,14 +29,26 @@ namespace Omega_Leo_Toolbox.Editor.Models
             return markDown;
         }
         
-        public string GenerateHTML()
+        public string GenerateHtml()
         {
             var html = "";
             //string html = $"<h1>{AssemblyName}</h1>";
 
             foreach (var n in Namespaces)
             {
-                html += n.GenerateHTML();
+                html += n.GenerateHtml();
+            }
+            
+            return html;
+        }
+
+        public string GenerateSidebarHtml()
+        {
+            var html = "";
+            
+            foreach (var n in Namespaces)
+            {
+                html += n.GenerateSidebarHtml();
             }
             
             return html;
@@ -66,13 +78,25 @@ namespace Omega_Leo_Toolbox.Editor.Models
             return markDown;
         }
         
-        public string GenerateHTML()
+        public string GenerateHtml()
         {
-            string html = $"<h2>{Name}</h2>";
+            string html = $"<h2 id='{Name}'>{Name}</h2>";
 
             foreach (var content in Classes)
             {
                 html += content.GenerateHTML();
+            }
+            
+            return html;
+        }
+        
+        public string GenerateSidebarHtml()
+        {
+            string html = $"<a href='#{Name}' class='subLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a><br>";
+
+            foreach (var content in Classes)
+            {
+                html += content.GenerateSidebarHTML();
             }
             
             return html;
@@ -106,12 +130,24 @@ namespace Omega_Leo_Toolbox.Editor.Models
         
         public string GenerateHTML()
         {
-            string html = $"<h3>{Name}</h3>";
+            string html = $"<h3 id='{Name}'>{Name}</h3>";
             html += $"<p>{Description}</p>";
 
             foreach (var content in Contents)
             {
                 html += content.GenerateHtml();
+            }
+            
+            return html;
+        }
+        
+        public string GenerateSidebarHTML()
+        {
+            string html = $"<a href='#{Name}' class='subSubLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a><br>";
+
+            foreach (var content in Contents)
+            {
+                html += content.GenerateSidebarHTML();
             }
             
             return html;
@@ -158,7 +194,7 @@ namespace Omega_Leo_Toolbox.Editor.Models
 
             if (Name.IsNotNullOrEmpty())
             {
-                html += $"<h4>{Name}</h4>";
+                html += $"<h4 id='{Name}'>{Name}</h4>";
             }
             
             html += $"<p>{Description}</p>";
@@ -170,6 +206,13 @@ namespace Omega_Leo_Toolbox.Editor.Models
 
             html += "<br>";
             
+            return html;
+        }
+        
+        public string GenerateSidebarHTML()
+        {
+            string html = $"<a href='#{Name}' class='subSubSubLink nav-link px-0'> <span class='d-none d-sm-inline'>{Name}</a><br>";
+
             return html;
         }
     }
