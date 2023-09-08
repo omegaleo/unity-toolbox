@@ -42,7 +42,17 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
         {
             gameObject.SetActive(!gameObject.activeSelf);
         }
-        
-        
+
+        public static bool TryGetComponent<T>(this GameObject gameObject, out T component) where T : Component
+        {
+            component = gameObject.GetComponent<T>();
+            
+            if (component != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
