@@ -62,10 +62,13 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
         public static T Random<T>(this IList<T> list)
         {
             if (list.Count == 0) return default;
-            
-            var r = new System.Random();
 
-            var randomIndex = r.Next(list.Count);
+            // Updated based on Robin King's tip about random items https://twitter.com/quoxel/status/1729137730607841755/photo/1
+            int seed = (int)DateTime.Now.Ticks;
+            
+            var r = new Random(seed);
+
+            var randomIndex = r.Next(0, list.Count);
 
             var returnValue = list[randomIndex];
 
