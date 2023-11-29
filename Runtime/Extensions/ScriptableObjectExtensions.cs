@@ -7,7 +7,7 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
         /// <summary>
         /// Creates and returns a clone of any given scriptable object.
         /// </summary>
-        public static T Clone<T>(this T scriptableObject) where T : ScriptableObject
+        public static T Copy<T>(this T scriptableObject) where T : ScriptableObject
         {
             if (scriptableObject == null)
             {
