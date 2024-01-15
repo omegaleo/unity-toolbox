@@ -20,7 +20,7 @@ namespace OmegaLeo.Toolbox.Editor.Helpers
         private static readonly Color _hoveredProColor = new Color(0.2706f, 0.2706f, 0.2706f);
 
         private static Color GetGUIColor(Color regularColor, Color proColor) =>
-            (EditorGUIUtility.isProSkin) ? regularColor : proColor;
+            (EditorGUIUtility.isProSkin) ? proColor : regularColor;
         
         [Documentation(nameof(GuiColor), 
             "Based on Warped Imagination's code for GUI Color featured in this video https://youtu.be/EFh7tniBqkk?feature=shared&t=514")]
