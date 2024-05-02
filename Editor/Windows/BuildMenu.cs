@@ -6,6 +6,7 @@ using Omega_Leo_Toolbox.Editor.Models;
 using OmegaLeo.Toolbox.Editor.Helpers;
 using UnityEditor;
 using UnityEditor.Build;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 namespace OmegaLeo.Toolbox.Editor.Windows
@@ -463,13 +464,19 @@ namespace OmegaLeo.Toolbox.Editor.Windows
             // Build player.
             EditorPrefs.SetBool("BurstCompilation", false);
 
+            BuildOptions options = _settings.dev ? BuildOptions.Development : BuildOptions.None;
+            options |= BuildOptions.ShowBuiltPlayer; // Show the built player even if minimized
+
+            var success = false;
             if (target == BuildTarget.WSAPlayer)
             {
-                UwpBuildHelper.StartBuild(inputPath, levels.ToArray(), ((_settings.dev) ? BuildOptions.Development : BuildOptions.None));
+                UwpBuildHelper.StartBuild(inputPath, levels.ToArray(), options);
             }
             else
             {
-                BuildPipeline.BuildPlayer(levels.ToArray(), inputPath, target, ((_settings.dev) ? BuildOptions.Development : BuildOptions.None));
+                var report = BuildPipeline.BuildPlayer(levels.ToArray(), inputPath, target, options);
+
+                success = report.summary.result == BuildResult.Succeeded;
             }
             
             
