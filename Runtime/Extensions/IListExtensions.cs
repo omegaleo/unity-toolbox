@@ -68,13 +68,11 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
             // Updated based on Robin King's tip about random items https://twitter.com/quoxel/status/1729137730607841755/photo/1
             int seed = (int)DateTime.Now.Ticks;
             
-            var r = new Random(seed);
+            var r = UnityEngine.Random.Range(0, list.Count);
 
-            var randomIndex = r.Next(0, list.Count);
+            var returnValue = list[r];
 
-            var returnValue = list[randomIndex];
-
-            return returnValue ?? list[0];
+            return returnValue ?? list.FirstOrDefault();
 
         }
     
