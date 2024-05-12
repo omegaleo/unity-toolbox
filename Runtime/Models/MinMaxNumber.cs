@@ -8,7 +8,15 @@ namespace OmegaLeo.Toolbox.Runtime.Models
     {
         public float Min;
         public float Max;
-        
+
+        public MinMaxNumber(float min, float max)
+        {
+            Min = min;
+            Max = max;
+        }
+
+        public MinMaxNumber() : this(0, 10) {}
+
         // Implicit conversion to float
         public static implicit operator float(MinMaxNumber number)
         {
