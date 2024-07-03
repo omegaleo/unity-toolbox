@@ -43,6 +43,8 @@ namespace OmegaLeo.Toolbox.Editor.Hierarchy
 
             var component = components.Length > 1 ? components[1] : components[0];
 
+            if (component == null) return;
+            
             var type = component.GetType();
 
             var content = EditorGUIUtility.ObjectContent(component, type);
