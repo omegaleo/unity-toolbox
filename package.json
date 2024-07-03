@@ -1,6 +1,6 @@
 {
     "name": "pt.omegaleo.toolbox",
-    "version": "1.0.5-rc",
+    "version": "1.0.6-rc",
     "displayName": "Omega Leo's Toolbox",
     "description": "This package contains some essential scripts and assets to help optimize the game creation workflow",
     "unity": "2021.3",
