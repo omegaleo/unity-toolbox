@@ -117,19 +117,5 @@ namespace OmegaLeo.Toolbox.Runtime.Extensions
         {
             return array[currentIndex++ % array.Count];
         }
-
-        public static bool TryGetFromIndex<T>(this List<T> list, int index, out T value)
-        {
-            try
-            {
-                value = list[index];
-                return true;
-            }
-            catch (Exception e)
-            {
-                value = default;
-                return false;
-            }
-        }
     }
 }
