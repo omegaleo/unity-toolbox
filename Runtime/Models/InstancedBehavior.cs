@@ -10,7 +10,7 @@ namespace OmegaLeo.Toolbox.Runtime.Models
     [Documentation("InstancedBehavior<T>", "Create an instanced MonoBehaviour of type T which can than be called by using <ClassName>.instance")]
     public class InstancedBehavior<T> : MonoBehaviour where T: Component
     {
-        private static T instance;
+        public static T instance;
 
         protected virtual void Awake()
         {
