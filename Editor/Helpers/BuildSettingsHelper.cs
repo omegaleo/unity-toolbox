@@ -10,9 +10,8 @@ namespace OmegaLeo.Toolbox.Editor.Helpers
     {
         public static BuildSettings GetOrCreateBuildSettings()
         {
-            string settingsPath = $"Assets/Build/BuildSettings.asset";
-
-
+            var settingsPath = Path.Join(Application.dataPath, "Build", "BuildSettings.asset");
+            
             if (!Directory.Exists(Path.Join(Application.dataPath, "Build")))
             {
                 Directory.CreateDirectory(Path.Join(Application.dataPath, "Build"));
