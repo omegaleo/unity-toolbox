@@ -356,12 +356,12 @@ namespace OmegaLeo.Toolbox.Editor.Windows
 
             if (!string.IsNullOrEmpty(_settings.KeyStorePassword))
             {
-                PlayerSettings.keystorePass = _settings.KeyStorePassword;
+                PlayerSettings.Android.keystorePass = _settings.KeyStorePassword;
             }
 
             if (!string.IsNullOrEmpty(_settings.KeyAliasPassword))
             {
-                PlayerSettings.keyaliasPass = _settings.KeyAliasPassword;
+                PlayerSettings.Android.keyaliasPass = _settings.KeyAliasPassword;
             }
             
             BuildSettingsHelper.SaveBuildSettings(_settings);

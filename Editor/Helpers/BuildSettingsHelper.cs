@@ -28,8 +28,8 @@ namespace OmegaLeo.Toolbox.Editor.Helpers
                 settings.CompanyName = PlayerSettings.companyName;
                 settings.BundleIdentifier = PlayerSettings.GetApplicationIdentifier(BuildTargetGroup.Standalone);
                 settings.BundleVersionCode = PlayerSettings.Android.bundleVersionCode;
-                settings.KeyStorePassword = PlayerSettings.keystorePass;
-                settings.KeyAliasPassword = PlayerSettings.keyaliasPass;
+                settings.KeyStorePassword = PlayerSettings.Android.keystorePass;
+                settings.KeyAliasPassword = PlayerSettings.Android.keyaliasPass;
                 AssetDatabase.CreateAsset(settings, settingsPath);
             }
 
